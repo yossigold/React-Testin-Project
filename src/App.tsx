@@ -9,14 +9,26 @@ import Content from "./components/Content";
 
 function App() {
   const links = ["Home", "News", "Contact"];
-
+  const body = [
+    "Home text goes here",
+    "News text goes here",
+    "Contact text goes here",
+  ];
+  const [selectedIndex, setSelectedIndex] = useState(-1);
   return (
     <>
       <div>
-        <TopMenu links={links}></TopMenu>
+        <TopMenu
+          links={links}
+          selectedIndex={selectedIndex}
+          HandelOnClick={setSelectedIndex}
+        ></TopMenu>
       </div>
       <div className="card">
-        <Content head="Contact" body="aaaa"></Content>
+        <Content
+          head={links[selectedIndex]}
+          body={body[selectedIndex]}
+        ></Content>
       </div>
 
       <div>fotter</div>
