@@ -2,21 +2,24 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+/*import "bootstrap/dist/css/bootstrap.css";*/
 
 import TopMenu from "./components/TopMenu";
-import Contact from "./components/Contact";
+import Content from "./components/Content";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const links = ["Home", "News", "Contact"];
 
   return (
     <>
       <div>
-        <TopMenu></TopMenu>
+        <TopMenu links={links}></TopMenu>
       </div>
       <div className="card">
-        <Contact></Contact>
+        <Content head="Contact" body="aaaa"></Content>
       </div>
+
+      <div>fotter</div>
     </>
   );
 }
