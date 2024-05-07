@@ -2,11 +2,10 @@ import { useState } from "react";
 import "./TopMenu.css";
 
 //let links = ["Home", "News", "Contact"];
-
 export default function TopMenu(props: {
-  links: string[];
+  links: { key: string; body: string }[];
   selectedIndex: number;
-  HandelOnClick: Function;
+  handelOnClick: Function;
 }) {
   //hook
   //const [selectedLink, setSelectedLink] = useState("");
@@ -17,11 +16,11 @@ export default function TopMenu(props: {
           className={index === props.selectedIndex ? "selected" : ""}
           href={"#" + link}
           onClick={() => {
-            console.log(link + " cliked");
-            props.HandelOnClick(index);
+            console.log(link.key + " cliked");
+            props.handelOnClick(index);
           }}
         >
-          {link}
+          {link.key}
         </a>
       ))}
     </div>
